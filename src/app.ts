@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
+const employeeRoutes = require('./routes/emoloyeeRoutes');
 
 
 const app = express();
@@ -25,5 +26,3 @@ mongoose.connect(source,{
 app.get('/home', (res : Response, req : Request) => {
 console.log("jesteśmy w domu");
 });
-
-
