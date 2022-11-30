@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const dotenv = require('dotenv');
 dotenv.config();
-const express = require('express');
+import express, { Express, Request, Response} from 'express';
+
 const employeeRoutes = require('./routes/emoloyeeRoutes');
 
 
 const app = express();
-const source = process.env.DATABASE_URL;
+let source:string = process.env.DATABASE_URL!;
 
 //text 
 app.get('/', (req :Request  , res:Response) => {
@@ -15,10 +16,7 @@ app.get('/', (req :Request  , res:Response) => {
 });
 
 //add mongoose
-mongoose.connect(source,{
-    useNewUrlParser: true, 
-    useUnifiedTopology: true
-    })
+mongoose.connect(source)
 .then(() => app.listen(3001))
 .catch((err:string) => console.log(err));
 

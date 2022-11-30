@@ -1,21 +1,17 @@
-"use strict";
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const dotenv = require('dotenv');
 dotenv.config();
-const express = require('express');
+import express from 'express';
 const employeeRoutes = require('./routes/emoloyeeRoutes');
 const app = express();
-const source = process.env.DATABASE_URL;
+let source = process.env.DATABASE_URL;
 //text 
 app.get('/', (req, res) => {
     //res.send('<p> Udało się </p>');
     console.log('dupa');
 });
 //add mongoose
-mongoose.connect(source, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(source)
     .then(() => app.listen(3001))
     .catch((err) => console.log(err));
 //text mongoose

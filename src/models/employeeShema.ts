@@ -1,6 +1,7 @@
 //const mongoose = require('mongoose');
-const mongoose1 = require('mongoose');
-const Shema = mongoose1.Shema;
+//const mongoose1 = require('mongoose');
+import mongoose from 'mongoose';
+const Shema = mongoose.Schema;
 
 const EmployeeShema = new Shema ({
     name: { 
@@ -17,5 +18,5 @@ const EmployeeShema = new Shema ({
     }
 }, {timestamps: true});
 
-const Employee = mongoose1.model('Employee', EmployeeShema);
+const Employee = mongoose.model('Employee', EmployeeShema);
 module.exports = Employee;
