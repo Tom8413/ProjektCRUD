@@ -1,22 +1,24 @@
-//const mongoose = require('mongoose');
-//const mongoose1 = require('mongoose');
-import mongoose from 'mongoose';
-const Shema = mongoose.Schema;
+import {Schema} from 'mongoose';
 
-const EmployeeShema = new Shema ({
-    name: { 
+
+interface User {
+    name:string;
+    password: string;
+    email: string;
+}
+
+export const schama = new Schema<User> ({
+    name: {
         type:String,
-        required: true
+        requierd: true
     },
     password: {
-        type: String, Number,
-        required: true
+        type:String,
+        requierd: true
     },
-    emial: {
-        type: String,
-        requied: true
+    email: {
+        type:String,
+        requierd: true
     }
-}, {timestamps: true});
 
-const Employee = mongoose.model('Employee', EmployeeShema);
-module.exports = Employee;
+});
