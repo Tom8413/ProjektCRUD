@@ -1,5 +1,14 @@
-const EmployeeData = require('../models/employeeShema');
+import EmployeeData from '../models/employeeShema';
 
-const addEmployeeData = (req: Request, res: Response) => {
+function addEmployeeData() { (req: Request, res: Response) => {
+    
+    const emloyeeUser = new EmployeeData({
+        name: 'userJeden',
+        password: 'userjeden',
+        emial: 'userjeden@goo.pl'
+    })
+    return emloyeeUser;
 
-}
+}};
+
+export default addEmployeeData;

@@ -1,4 +1,4 @@
-import {Schema} from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
 
 interface User {
@@ -20,5 +20,7 @@ export const schama = new Schema<User> ({
         type:String,
         requierd: true
     }
-
 });
+
+const UserSchema = mongoose.model("UserData", schama);
+export default Schema;

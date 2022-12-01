@@ -1,9 +1,17 @@
-const employeeControllers = require('../controllers/emoloyeeControllers');
-const employeeShema = require('../models/employeeShema');
-const express1 = require('express');
+import express from 'express';
 
-const router = express1.Router();
+import employeeControllers from'../controllers/emoloyeeControllers';
+const employeeShema = require('../models/employeeShema');
+
+
+let router = express.Router();
+
+function addData() {
 
 router.get('/', employeeControllers.addEmployeeData);
 
-module.exports = router;
+};
+
+
+//module.exports = router;
+export default addData;

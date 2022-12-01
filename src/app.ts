@@ -3,7 +3,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 import express, { Express, Request, Response} from 'express';
 
-const employeeRoutes = require('./routes/emoloyeeRoutes');
+//const employeeRoutes = require('./routes/emoloyeeRoutes');
+import employeeRoutes from "./routes/emoloyeeRoutes";
 
 
 const app = express();
