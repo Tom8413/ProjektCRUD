@@ -8,7 +8,7 @@ let router = express.Router();
 
 function addData() {
 
-router.get('/', employeeControllers.addEmployeeData);
+router.get('/', employeeControllers.add);
 
 };
 

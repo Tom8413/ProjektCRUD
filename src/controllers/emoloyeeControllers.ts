@@ -1,14 +1,25 @@
 import EmployeeData from '../models/employeeShema';
 
-function addEmployeeData() { (req: Request, res: Response) => {
-    
-    const emloyeeUser = new EmployeeData({
-        name: 'userJeden',
-        password: 'userjeden',
-        emial: 'userjeden@goo.pl'
-    })
-    return emloyeeUser;
+export default class addEmployeeData {
+    name: string; 
+    password: string;
+    email:string;
 
-}};
+    constructor(name:string, password:string, email:string) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+    };
 
-export default addEmployeeData;
+    dataFunction = (req:Request, res: Response) => {
+
+        const emloyeeUser = new EmployeeData({
+            name: 'userJeden',
+            password: 'userjeden',
+            emial: 'userjeden@goo.pl'
+        })
+    };
+ 
+};
+
+//export default addEmployeeData;
