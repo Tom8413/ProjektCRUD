@@ -1,5 +1,12 @@
 import EmployeeData from '../models/employeeShema';
+import {NextFunction, Request, Response} from 'express';
+import mongoose from 'mongoose';
 
+const createUser = (req:Request, res:Response, nex:NextFunction) => {
+    const {name} = req.body;
+}
+
+/*
 export default class addEmployeeData {
     name: string; 
     password: string;
@@ -23,3 +30,4 @@ export default class addEmployeeData {
 };
 
 //export default addEmployeeData;
+*/

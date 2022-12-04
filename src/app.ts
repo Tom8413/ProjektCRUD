@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const dotenv = require('dotenv');
 dotenv.config();
 import express, { Express, Request, Response} from 'express';
