@@ -32,5 +32,10 @@ console.log("jesteśmy w domu");
 });
 
 app.get('/r', (req:Request, res:Response) => {
-    res.render('../views/index');
+    res.render('index')
 });
+
+app.get('/c', (req:Request, res:Response) =>
+    res.render('create')
+
+);
