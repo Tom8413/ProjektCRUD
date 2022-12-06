@@ -10,7 +10,7 @@ import employeeRoutes from "./routes/emoloyeeRoutes";
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-
+app.use(express.urlencoded({extended: true}));
 
 let source:string = process.env.DATABASE_URL!;
 
@@ -32,8 +32,12 @@ console.log("jesteśmy w domu");
 });
 
 app.get('/r', (req:Request, res:Response) => {
-    res.render('index')
+    res.render('create', {title: ' | Home'});
 });
+app.post('/b', (req: Request, res: Response) => {
+    console.log(req.body);
+
+})
 
 app.get('/c', (req:Request, res:Response) =>
     res.render('create')
