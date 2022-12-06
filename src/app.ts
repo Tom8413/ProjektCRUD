@@ -2,9 +2,11 @@ import mongoose from 'mongoose';
 const dotenv = require('dotenv');
 dotenv.config();
 import express, { Express, Request, Response} from 'express';
+import employeeShema from './models/employeeShema';
 
 //const employeeRoutes = require('./routes/emoloyeeRoutes');
 import employeeRoutes from "./routes/emoloyeeRoutes";
+
 
 
 const app = express();
@@ -35,7 +37,15 @@ app.get('/r', (req:Request, res:Response) => {
     res.render('create', {title: ' | Home'});
 });
 app.post('/b', (req: Request, res: Response) => {
-    console.log(req.body);
+    const EmployeeShema = new employeeShema(req.body);
+    
+    EmployeeShema.save()
+    .then((result) => {
+        res.redirect('/b');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 
 })
 
