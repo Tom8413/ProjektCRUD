@@ -36,12 +36,16 @@ console.log("jesteśmy w domu");
 app.get('/r', (req:Request, res:Response) => {
     res.render('create', {title: ' | Home'});
 });
-app.post('/b', (req: Request, res: Response) => {
-    const EmployeeShema = new employeeShema(req.body);
+app.post('/r', (req: Request, res: Response) => {
+    const EmployeeShema = new employeeShema({
+        name: req.body.title, 
+        password: req.body.snippet, 
+        email: req.body.body
+    });
     
     EmployeeShema.save()
     .then((result) => {
-        res.redirect('/b');
+        res.redirect('/r');
     })
     .catch((err) => {
         console.log(err);
