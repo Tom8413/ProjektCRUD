@@ -6,6 +6,7 @@ import employeeShema from './models/employeeShema';
 
 //const employeeRoutes = require('./routes/emoloyeeRoutes');
 import employeeRoutes from "./routes/emoloyeeRoutes";
+import { userInfo } from 'os';
 
 
 
@@ -33,9 +34,16 @@ app.get('/home', (res : Response, req : Request) => {
 console.log("jesteśmy w domu");
 });
 
-app.get('/r', (req:Request, res:Response) => {
-    res.render('create', {title: ' | Home'});
+app.get('/all', (req:Request, res:Response) => {
+    employeeShema.find()
+    .then((result) => {
+        res.render('index', {title: 'All users', Users: result });
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 });
+
 app.post('/r', (req: Request, res: Response) => {
     const EmployeeShema = new employeeShema({
         name: req.body.title, 

@@ -8,25 +8,22 @@
   </head>
 
   <body>
-    <% const name = 'mario' %>
-
+    
     <naw>
-        <div class="site-title">
-            <p><%= name %></p>
-            <a href="/"><h1>Employee List</h1></a>
-            <p> Employee</p>
-        </div>
-        <ul>
-            <li><a href="/">Blogs</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blogs/create">New Blog</a></li>
-
-        </ul>
+        <div class="Users content">
+            <h2>All Users</h2>
+        
+            <% if (Users.length > 0) { %>
+              <% Users.forEach(user => { %>
+                <h3 class="title"><%= user.name %></h3>
+                <p class="snippet"><%= user.password %></p>
+              <% }) %>
+            <% } else { %>
+              <p>There are no blogs to display...</p>
+            <% } %>
+            
+          </div>
     </naw>
-
-    <div class="blogs content">
-        <h2>All Blogs</h2>
-    </div>
 
     </body>
     </html>
