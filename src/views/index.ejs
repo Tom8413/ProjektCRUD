@@ -15,8 +15,10 @@
         
             <% if (Users.length > 0) { %>
               <% Users.forEach(user => { %>
+                <p class="id:"><%= user.id %></p>
                 <h3 class="title"><%= user.name %></h3>
                 <p class="snippet"><%= user.password %></p>
+                <p class="email"><%= user.email %></p>
               <% }) %>
             <% } else { %>
               <p>There are no blogs to display...</p>

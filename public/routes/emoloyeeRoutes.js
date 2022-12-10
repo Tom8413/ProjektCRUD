@@ -1,7 +1,13 @@
 "use strict";
-const employeeControllers = require('../controllers/emoloyeeControllers');
-const employeeShema = require('../models/employeeShema');
-const express1 = require('express');
-const router = express1.Router();
-router.get('/', employeeControllers.addEmployeeData);
-module.exports = router;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+let router = express_1.default.Router();
+function addData() {
+    //router.get('/', employeeControllers.add);
+}
+;
+//module.exports = router;
+exports.default = addData;

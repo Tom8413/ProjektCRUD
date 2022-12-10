@@ -46,9 +46,9 @@ app.get('/all', (req:Request, res:Response) => {
 
 app.post('/r', (req: Request, res: Response) => {
     const EmployeeShema = new employeeShema({
-        name: req.body.title, 
-        password: req.body.snippet, 
-        email: req.body.body
+        name: req.body.name, 
+        password: req.body.password, 
+        email: req.body.email
     });
     
     EmployeeShema.save()
