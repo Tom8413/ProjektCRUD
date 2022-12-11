@@ -51,6 +51,16 @@ app.post('/r', (req: Request, res: Response) => {
     })
 
 })
+app.get("/users/:id", (req:Request, res:Response) => {
+    const id = req.params.id;
+    employeeShema.findById(id)
+    .then(result => {
+        res.render('details', {user: result, title: 'userdata'});
+    })
+    .catch(err => {
+        console.log(err);
+    })
+})
 
 app.get('/c', (req:Request, res:Response) =>
     res.render('create')
