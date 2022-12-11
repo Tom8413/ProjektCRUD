@@ -4,7 +4,7 @@ dotenv.config();
 import express, { Express, Request, Response} from 'express';
 import employeeShema from './models/employeeShema';
 
-//const employeeRoutes = require('./routes/emoloyeeRoutes');
+
 import employeeRoutes from "./routes/emoloyeeRoutes";
 import { userInfo } from 'os';
 
