@@ -9,9 +9,9 @@ let router = express.Router();
 
 router.get('/all', employeeControllers.viewAllUseer);
 router.get('/users/:id', employeeControllers.getIDUser);
-router.get('/r', employeeControllers.sendDataUserToBrowser);
+router.get('/r', employeeControllers.sendDataToUserToBrowser);
 router.post('/r', employeeControllers.addUserToDataBase);
 router.delete('/users/:id', employeeControllers.deleteUser);
 
 
-export default addData;
+export default router;

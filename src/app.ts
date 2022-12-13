@@ -23,8 +23,8 @@ mongoose.connect(source)
 .then(() => app.listen(3001))
 .catch((err:string) => console.log(err));
 
-//app.use(employeeRoutes);
-
+app.use(employeeRoutes);
+/*
 app.get('/all', (req:Request, res:Response) => {
     employeeShema.find()
     .then((result) => {
@@ -77,3 +77,4 @@ app.get('/c', (req:Request, res:Response) =>
     res.render('create')
 
 );
+*/

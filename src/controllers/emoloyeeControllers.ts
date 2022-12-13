@@ -13,6 +13,7 @@ const viewAllUseer = (req:Request, res:Response) => {
         console.log(err);
     })
 };
+
 const getIDUser = (req:Request, res:Response) => {
     const id = req.params.id;
     employeeShema.findById(id)
@@ -25,9 +26,9 @@ const getIDUser = (req:Request, res:Response) => {
 };
 
 const sendDataToUserToBrowser = (req:Request, res:Response) =>
-    res.render('create')
+    res.render('create');
 
-);
+
 
 const addUserToDataBase = (req: Request, res: Response) => {
     const EmployeeShema = new employeeShema({
