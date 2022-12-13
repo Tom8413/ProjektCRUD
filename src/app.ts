@@ -66,7 +66,7 @@ app.delete("/users/:id", (req:Request, res:Response) => {
 
     employeeShema.findByIdAndDelete(id)
     .then(result => {
-        res.json({redirect: '/users'})
+        res.json({redirect: '/all'});
     })
     .catch(err => {
         console.log(err);
