@@ -23,7 +23,7 @@ mongoose.connect(source)
 .then(() => app.listen(3001))
 .catch((err:string) => console.log(err));
 
-
+//app.use(employeeRoutes);
 
 app.get('/all', (req:Request, res:Response) => {
     employeeShema.find()
@@ -44,7 +44,7 @@ app.post('/r', (req: Request, res: Response) => {
     
     EmployeeShema.save()
     .then((result) => {
-        res.redirect('/r');
+        res.redirect('/all');
     })
     .catch((err) => {
         console.log(err);
