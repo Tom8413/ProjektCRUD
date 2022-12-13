@@ -61,6 +61,17 @@ app.get("/users/:id", (req:Request, res:Response) => {
         console.log(err);
     })
 })
+app.delete("/users/:id", (req:Request, res:Response) => {
+    const id = req.params.id;
+
+    employeeShema.findByIdAndDelete(id)
+    .then(result => {
+        res.json({redirect: '/users'})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+})
 
 app.get('/c', (req:Request, res:Response) =>
     res.render('create')
