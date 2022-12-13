@@ -1,20 +1,20 @@
-import mongoose from "mongoose";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv = require('dotenv');
 dotenv.config();
-import express from 'express';
-const employeeRoutes = require('./routes/emoloyeeRoutes');
-const app = express();
+const express_1 = __importDefault(require("express"));
+const emoloyeeRoutes_1 = __importDefault(require("./routes/emoloyeeRoutes"));
+const app = (0, express_1.default)();
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.use(express_1.default.urlencoded({ extended: true }));
 let source = process.env.DATABASE_URL;
-//text 
-app.get('/', (req, res) => {
-    //res.send('<p> Udało się </p>');
-    console.log('dupa');
-});
 //add mongoose
-mongoose.connect(source)
+mongoose_1.default.connect(source)
     .then(() => app.listen(3001))
     .catch((err) => console.log(err));
-//text mongoose
-app.get('/home', (res, req) => {
-    console.log("jesteśmy w domu");
-});
+app.use(emoloyeeRoutes_1.default);
