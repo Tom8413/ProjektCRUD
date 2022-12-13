@@ -7,9 +7,9 @@ import employeeShema from '../models/employeeShema';
 let router = express.Router();
 
 
-router.get('/all', employeeControllers.viewAllUseer);
+router.get('/view/system/users', employeeControllers.viewAllUseer);
 router.get('/users/:id', employeeControllers.getIDUser);
-router.get('/r', employeeControllers.sendDataToUserToBrowser);
+router.get('/post/system/users', employeeControllers.sendDataToUserToBrowser);
 router.post('/r', employeeControllers.addUserToDataBase);
 router.delete('/users/:id', employeeControllers.deleteUser);
 

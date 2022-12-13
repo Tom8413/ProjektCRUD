@@ -29,7 +29,6 @@ const sendDataToUserToBrowser = (req:Request, res:Response) =>
     res.render('create');
 
 
-
 const addUserToDataBase = (req: Request, res: Response) => {
     const EmployeeShema = new employeeShema({
         name: req.body.name, 
@@ -39,7 +38,7 @@ const addUserToDataBase = (req: Request, res: Response) => {
     
     EmployeeShema.save()
     .then((result) => {
-        res.redirect('/r');
+        res.redirect('/post/system/users');
     })
     .catch((err) => {
         console.log(err);
