@@ -10,15 +10,15 @@ export interface User {
 const UserSchema: Schema = new Schema<User> ({
     name: {
         type:String,
-        requierd: true
+        required: true
     },
     password: {
         type:String,
-        requierd: true
+        required: true
     },
     email: {
         type:String,
-        requierd: true
+        required: true
     }
 });
 
